@@ -3,12 +3,13 @@ import Search from '../components/Search'
 import Images from '../components/Images'
 import { connect } from 'react-redux'
 import { fetchImages } from '../actions/apiActions'
+import './styles.css'
 
 export class App extends Component{
   render(){
     return (
-      <div>
-        <Search search={this.props.search}/>
+      <div className="container-fluid">
+        <Search search={this.props.search} fetching={this.props.api.fetching} tags={this.props.api.tags}/>
         <Images api={this.props.api}/>
       </div>
     )

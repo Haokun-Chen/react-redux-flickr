@@ -17,16 +17,18 @@ export default class Search extends Component{
 
   handleSubmit(event){
     let tags = this.state.input
-    this.props.search(tags)
+    if(!this.props.fetching && this.props.tags !== tags){
+      this.props.search(tags)
+    }
     event.preventDefault()
   }
 
   render(){
     return(
-      <div>
+      <div id="search-bar">
         <p>Search by tag:</p>
-        <input type="text" value={this.state.input} onChange={this.handleChange} />
-        <button onClick={this.handleSubmit}>Search</button>
+        <input id="tags-input" type="text" value={this.state.input} onChange={this.handleChange} />
+        <button className="btn btn-primary" onClick={this.handleSubmit}>Search</button>
       </div>
     )
   }

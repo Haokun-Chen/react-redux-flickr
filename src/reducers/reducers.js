@@ -32,6 +32,7 @@ const apiReducer = (state = {
       state = {
         ...state,
         fetching: false,
+        image: [],
         error: action.error.status,
       }
       break

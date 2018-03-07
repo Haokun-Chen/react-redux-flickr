@@ -32,7 +32,7 @@ export function fetchRejected(error) {
 export function fetchImages(tags) {
   return dispatch => {
     dispatch(fetchPending(tags))
-    return $.getJSON('https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?',{format: "json",tags:tags})
+    return $.getJSON('https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?',{format: "json", tags:tags})
       .then(json => json.items.map(obj => {
         let rObj = {}
         rObj['title'] = obj.title

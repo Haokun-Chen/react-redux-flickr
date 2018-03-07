@@ -1,0 +1,31 @@
+body{
+  background:beige;
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  height:100%;
+  padding:10px;
+  margin:15px;
+  max-width:250px;
+}
+
+.card-title{
+  margin: auto;
+  max-width:90%;
+  margin-bottom:10px;
+}
+
+#tags-input{
+  margin-right:10px;
+  border: 1px solid rgba(0,0,0,.125);
+  box-shadow: 1px 1px lightgrey;
+}
+
+#search-bar{
+  margin-top:20px;
+}
