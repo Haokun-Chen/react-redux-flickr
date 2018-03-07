@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {Component} from 'react'
+import './styles.css'
 
-const Images = (images) => (
-  <div>
-  </div>
-)
+export default class Images extends Component{
 
-export default Images
+  render(){
+    return(
+      <div className="content">
+        {this.props.api.fetching && <p>Loading Images...</p> }
+          {this.props.api.images.map((item, i) =>
+            <div key={i} className="grid">
+              <p>{item.title.substr(0,20)}</p>
+              <img alt="img" className="image" src={item.link} />
+            </div>)
+          }
+      </div>
+    )
+  }
+}

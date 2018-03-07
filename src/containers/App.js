@@ -2,27 +2,23 @@ import React, {Component} from 'react'
 import Search from '../components/Search'
 import Images from '../components/Images'
 import { connect } from 'react-redux'
+import { fetchImages } from '../actions/apiActions'
 
 export class App extends Component{
-
-  constructor(props){
-    super(props)
-  }
-
   render(){
     return (
       <div>
-        <Search
-        search={(tags) => this.props.search(tags)}/>
-        <Images />
+        <Search search={this.props.search}/>
+        <Images api={this.props.api}/>
       </div>
     )
   }
 }
-//Which properties of global app do I want to use in the local app components
+
+// tells how to transform the current Redux store state into the props you want to pass to a presentational component
 const mapStateToProps = (state) => {
   return{
-    // tags: state.apiReducer
+    // prop-name: state.apiReducer(key)
     api: state.api,
   }
 }
@@ -30,12 +26,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     search: (tags) => {
-      dispatch({
-        type: 'REQUEST_IMG',
-        payload: tags,
-      })
+      dispatch(fetchImages(tags))
     }
   }
 }
-
+// connect() subscribe to the Redux store
+// use connect() to map the store (state & dispatch) to props of the component(App)
 export default connect(mapStateToProps, mapDispatchToProps)(App)

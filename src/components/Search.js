@@ -16,20 +16,17 @@ export default class Search extends Component{
   }
 
   handleSubmit(event){
-    alert('Submited!' + this.state.input)
-    this.props.search(this.state.input)
+    let tags = this.state.input
+    this.props.search(tags)
     event.preventDefault()
   }
 
   render(){
     return(
       <div>
-        <label>
-        Tags:
+        <p>Search by tag:</p>
         <input type="text" value={this.state.input} onChange={this.handleChange} />
-        </label>
         <button onClick={this.handleSubmit}>Search</button>
-
       </div>
     )
   }
