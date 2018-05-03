@@ -1,5 +1,10 @@
-This app is created with react and redux to retrieve and display flickr public feed of different tags.
+This is a personal project to learn React and Redux.
 
-Users can type in tags and search images in flickr public feed.
+The web app is used to retrieve and display flickr public feed images of different tags. Users can type in tags and search images in flickr public feed.
 
-Deployed on Heroku: https://immense-tundra-54077.herokuapp.com/
+**Deployed on Heroku: https://react-redux-flickr.herokuapp.com/**
+
+Technologies:
+- HTML, CSS, JavaScript
+- React, Redux
+- Flickr API
